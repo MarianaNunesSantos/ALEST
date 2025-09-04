@@ -1,4 +1,6 @@
-package main.java.com.nunes;
+package com.nunes;
+
+import javax.lang.model.element.Element;
 
 public class LinkedListOfInteger {
     private class Node {
@@ -94,10 +96,10 @@ public class LinkedListOfInteger {
         //          avança
         //      retorna o elemento quando chega no index
         public Integer get (int index){
-            if (index < 0 || index >= count) {
+            if (index < 0 || index >= cont) {
                 throw new IndexOutOfBoundsException("ERRO: "+index);
             }
-            if (index == count-1) { // posiçao logica do tail
+            if (index == cont-1) { // posiçao logica do tail
                 return tail.element; //retorna o elemeto do tail
             }
             Node aux = head;
@@ -126,6 +128,64 @@ public class LinkedListOfInteger {
                 cont++;
             }
             return -1;
+        }
+
+        public void add (int index, Integer element){
+            if (index<0 || index > cont) {
+                throw new IndexOutOfBoundsException("Erro!! "+index);//verifica index se é valido
+            }
+            Node n = new Node (element);
+            if (index == 0) {//insere no inicio
+                if (head == null) { // verifica se lista esá vazia
+                    tail=n;
+                }else{
+                    n.next = head;
+                }
+                head=n;
+            }else{
+                if (index==cont) {//add no final da lista
+                    tail.next=n;
+                    tail=n;
+                }else{//insere no meio da lista
+                    Node aux = head;
+                    for (int i = 0; i < index-1; i++) {//acha a posição na lista
+                        aux = aux.next;
+                    }
+                    n.next=aux.next;
+                }
+            }
+            cont ++;
+        }
+
+        public boolean remove (Integer element){
+            if (cont == 0) {
+                return false;
+            }
+            if (head.element.equals(element)) {//remove inicio
+                if (cont == 1) {//tem só um nodo
+                    tail = null;
+                }
+                head = head.next;
+                cont--;
+                return true;
+            }
+            Node ant = head;
+            Node aux = head.next;
+            for (int i = 1; i < cont; i++) {//remoçao no meio e no final da lista
+                if (aux.element.equals(element)) {
+                    if (aux == tail) {//remoçao no final da lista
+                        tail = ant;
+                        tail.next = null;
+                    }else{
+                        ant.next = aux.next;
+                    }
+                    cont--;
+                    return true;
+                }
+                ant = ant.next;
+                aux = aux.next;
+            }
+            return false;
         }
 
 

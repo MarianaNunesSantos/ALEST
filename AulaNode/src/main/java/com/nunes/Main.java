@@ -1,7 +1,5 @@
 package com.nunes;
 
-import main.java.com.nunes.LinkedListOfInteger;
-
 public class Main {
     public static void main(String[] args) {
         LinkedListOfInteger lista = new LinkedListOfInteger();
