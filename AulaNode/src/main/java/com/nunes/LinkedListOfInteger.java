@@ -10,6 +10,8 @@ public class LinkedListOfInteger {
         private Node tail; //referencia para o ultimo elemento da lista encadeada
         private int cont; // contador para saber a quantidade de elementos que a lista contem
 
+        
+        //refazer 1!!!!
         //construtor da lista encadeada
         public LinkedListOfInteger(){
             head=null;
