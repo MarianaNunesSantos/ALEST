@@ -1,4 +1,3 @@
-package com.nunes;
 
 class EmptyQueueException extends RuntimeException {
 

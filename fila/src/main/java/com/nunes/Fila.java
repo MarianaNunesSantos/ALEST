@@ -1,5 +1,4 @@
 package com.nunes;
-import com.nunes.LinkedListOfInteger;
 
 public class Fila {
 
