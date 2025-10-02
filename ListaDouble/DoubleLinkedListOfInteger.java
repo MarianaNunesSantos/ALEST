@@ -89,7 +89,7 @@ public class DoubleLinkedListOfInteger {
         trailer.prev.next = n;
         trailer.prev = n;
     }
-
+ 
     //remover nodo
     //da esquerda para a direita estou navegando e na direita estou atribuindo valores
     //aux.prev.next = aux.next

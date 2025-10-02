@@ -14,7 +14,7 @@ public class Fila {
        fila.add(e); 
     }
 
-    // Remove e retorna o elemento do inicio da fila
+    // Remove e retorna o elemento do inicio da fila 
     public Integer dequeue() {
         // Primeiro verifica se a fila nao esta vazia
         if (fila.isEmpty())

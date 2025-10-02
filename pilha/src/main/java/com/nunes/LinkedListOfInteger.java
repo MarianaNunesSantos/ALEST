@@ -14,7 +14,7 @@ public class LinkedListOfInteger {
             this.element = element;
             this.next = next;
         }
-    }
+    } 
 
     private Node head;
     private Node tail;
