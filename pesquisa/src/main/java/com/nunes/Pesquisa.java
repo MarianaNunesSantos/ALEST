@@ -18,7 +18,7 @@ public class Pesquisa {
                 return false;
             }
         }
-        return false;
+        return false; 
         
     }
 
@@ -38,6 +38,22 @@ public class Pesquisa {
             }
         }
         return false;
+    }
+
+    public boolean peqBinariaRec (int vetor[], int elemento,  int ini, int fim){// se usa recursividade pela logica mais simples de codigo
+        if (ini > fim){                                                         // mesmo sendo a mesma coisa q a iterativa e gastando mais memoria
+            return false;                                                       // BIG O(log n) 
+        }
+        
+        int meio = (ini + fim)/2;
+        if (vetor[meio] == elemento){
+            return true;
+        }else if (vetor[meio] < elemento){
+            return peqBinariaRec(vetor, elemento, meio + 1, fim);
+        } else {
+            return peqBinariaRec(vetor, elemento, ini, meio - 1);
+        }
+
     }
 
 }

@@ -10,5 +10,7 @@ public class Main {
         System.out.println(p.pesquisaSeqNOrdenada(vetor, elemento));
         System.out.println(p.pesquisaSeqOrdenada(vetorO, elemento));
         System.out.println(p.pesquisaBinaria(vetorO, elemento));
+
+        System.out.println(p.peqBinariaRec(vetor, elemento, 0, vetorO.length -1));
     }
 }
